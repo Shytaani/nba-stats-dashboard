@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "nba-stats-dashboard"
+version = "0.1.0"
+description = ""
+authors = ["Toru Tanikawa <toru.tanikawa824@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+streamlit = "^1.34.0"
+nba-api = "^1.6.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+flake8 = "^7.0.0"
+black = "^24.4.2"
+isort = "^5.13.2"
+mypy = "^1.10.0"
+pre-commit = "^3.7.1"
+identify = "^2.6.1"
+
+[tool.pytest.ini_options]
+addopts = "-v --cov=nba_stats_dashboard --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+# Basic settings
+python_version = "3.12"  # Specify the version of Python being used
+ignore_missing_imports = true  # Ignore errors for missing type hints in external dependencies like Streamlit and other libraries
+
+# Exclude files and directories from error reporting
+exclude = [
+    ".nba_stats_dashboard",  # Virtual environment directory
+    "tests",  # Test directory
+    "build",
+    "dist",
+    "git-hooks",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
