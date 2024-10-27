@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "nba-stats-dashboard"
 version = "0.1.0"
-description = ""
+description = "A Streamlit dashboard for NBA statistics"
 authors = ["Toru Tanikawa <toru.tanikawa824@gmail.com>"]
 readme = "README.md"
 
